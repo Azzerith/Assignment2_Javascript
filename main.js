@@ -46,8 +46,8 @@ function studentStatus(name, studentId) {
     }
     return `Mahasiswa a.n ${name} terdaftar sebagai mahasiswa Program Studi ${prodi} pada ${fakultas} sejak tahun ${tahun}.`
 }
-console.log(studentStatus("Djarot Purnomo", "FISIP2011320091"))
-    // Dilarang menghapus/mangganti code dibawah ini!!!
+
+// Dilarang menghapus/mangganti code dibawah ini!!!
 if (process.env.NODE_ENV !== "test") {
     console.log(process_argv());
 }
