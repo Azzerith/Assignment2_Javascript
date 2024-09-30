@@ -6,19 +6,27 @@ function process_argv() {
 }
 
 function studentStatus(name, studentId) {
-    let fakultas
+    let fakultas, tahun;
     if (studentId.slice(0, 2) === "FE") {
         fakultas = "Fakultas Ekonomi"
+        tahun = studentId.slice(2, 6)
+    } else
+    if (studentId.slice(0, 4) === "FTIS") {
+        fakultas = "Fakultas Teknologi Informasi dan Sains"
+        tahun = studentId.slice(4, 8)
     } else if (studentId.slice(0, 2) === "FT") {
         fakultas = "Fakultas Teknik"
+        tahun = studentId.slice(2, 6)
     } else if (studentId.slice(0, 5) === "FISIP") {
         fakultas = "Fakultas Ilmu Sosial dan Politik"
-    } else if (studentId.slice(0, 4) === "FTIS") {
-        fakultas = "Fakultas Teknologi Informasi dan Sains"
+        tahun = studentId.slice(5, 9)
     }
+    let prodi
+    if (studentId.slice(6, 8) === "21" || studentId.slice(9, 11) == "21" || studentId.slice(8, 10) == "21") {
+        prodi = "Ekonomi"
+    }
+    return `Mahasiswa a.n ${name} terdaftar sebagai mahasiswa Program Studi ${prodi} pada ${fakultas} sejak tahun ${tahun}.`
 }
-let a = "bayam"
-console.log(a.slice(0, 2))
 
 // Dilarang menghapus/mangganti code dibawah ini!!!
 if (process.env.NODE_ENV !== "test") {
